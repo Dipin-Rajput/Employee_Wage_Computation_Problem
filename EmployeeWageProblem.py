@@ -32,3 +32,23 @@ def calculate_daily_wage():
 
 daily_wages = calculate_daily_wage()
 print("Your today's wages:", daily_wages)
+
+#UC3
+
+part_time_hours = 8
+
+def calculate_total_wage():
+
+    if(status == 1):
+        print("Enter 1 for part-time performed.")
+        print("Enter 0 for part-time not performed.")
+        part_time = int(input("Enter you input: "))
+
+        if(part_time == 1):
+            amount = daily_wages + part_time_hours * wage_per_hour
+            print("Your today's wages are:", amount)
+        else:
+            wages = calculate_daily_wage()
+            print("Your today's wages are:", wages)
+
+calculate_total_wage()
