@@ -53,12 +53,51 @@ def part_time_wages():
 # pt_wages = part_time_wages()
 # print("Your part-time wages are:", pt_wages)
 
+#UC5
+
+working_day_in_month = 20
+
+def monthly_wages():
+
+    total_wages = 0
+
+    for i in range(1, working_day_in_month + 1):
+
+        full_day_status = check_attendance()
+
+        if(full_day_status == 1):
+
+            fd_wages = full_day_hours * wage_per_hour
+            total_wages += fd_wages
+
+            print(f"Your Day {i} full-day wages are:", fd_wages)
+
+        else:
+            print(f"Your Day {i} full-day wages are:", None)
+        
+        part_time_status = check_attendance()
+
+        if(part_time_status == 1):
+
+            pt_wages = part_time_hours * wage_per_hour
+            total_wages += pt_wages
+
+            print(f"Your Day {i} part-time wages are:", pt_wages)
+
+        else:
+            print(f"Your Day {i} part-time wages are:", None)
+
+        print()
+    
+    return total_wages
+
 #UC4
 
 print()
 print("Enter 1 to check attendance status.")
 print("Enter 2 to check full-day wages.")
-print("Enter 3 to check part-time wages")
+print("Enter 3 to check part-time wages.")
+print("Enter 4 to check monthly wages.")
 print()
 
 choice = int(input("Enter your choice: "))
@@ -68,10 +107,10 @@ match choice:
     case 1:
         check_attendance()
     case 2:
-        fd_wages = full_day_wages()
-        print("Your full-day wages are:", fd_wages)
+        print("Your full-day wages are:", full_day_wages())
     case 3:
-        pt_wages = part_time_wages()
-        print("Your part-time wages are:", pt_wages)
+        print("Your part-time wages are:", part_time_wages())
+    case 4:
+        print("Your monthly wages are:", monthly_wages())
     case _:
         print("Please select from above choices only.")
