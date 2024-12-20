@@ -15,20 +15,22 @@ def check_attendance():
         return attendance
 
 welcome_message()
-status = check_attendance()
+# check_attendance()
 
 #UC2
 
 wage_per_hour = 20
 full_day_hours = 8
 
-def calculate_daily_wage():
+def full_day_wages():
+
+    status = check_attendance()
 
     if(status == 1):
         daily_wages = full_day_hours * wage_per_hour
         return daily_wages
     else:
-        print("You are absent today.")
+        return None
 
-daily_wages = calculate_daily_wage()
-print("Your today's wages:", daily_wages)
+fd_wages = full_day_wages()
+print("Your full-day wages are:", fd_wages)
