@@ -3,7 +3,7 @@ import random
 #UC1
 
 def welcome_message():
-    print("Welcome to employee wage computation program.")
+    print("------------------------- Welcome to employee wage computation program -------------------------")
 
 def check_attendance():
     attendance = random.choice([0, 1])
@@ -14,6 +14,7 @@ def check_attendance():
         print("Employee is Absent.")
         return attendance
 
+print()
 welcome_message()
 # check_attendance()
 
@@ -32,8 +33,8 @@ def full_day_wages():
     else:
         return None
 
-fd_wages = full_day_wages()
-print("Your full-day wages are:", fd_wages)
+# fd_wages = full_day_wages()
+# print("Your full-day wages are:", fd_wages)
 
 #UC3
 
@@ -49,5 +50,28 @@ def part_time_wages():
     else:
         return None
 
-pt_wages = part_time_wages()
-print("Your part-time wages are:", pt_wages)
+# pt_wages = part_time_wages()
+# print("Your part-time wages are:", pt_wages)
+
+#UC4
+
+print()
+print("Enter 1 to check attendance status.")
+print("Enter 2 to check full-day wages.")
+print("Enter 3 to check part-time wages")
+print()
+
+choice = int(input("Enter your choice: "))
+
+match choice:
+
+    case 1:
+        check_attendance()
+    case 2:
+        fd_wages = full_day_wages()
+        print("Your full-day wages are:", fd_wages)
+    case 3:
+        pt_wages = part_time_wages()
+        print("Your part-time wages are:", pt_wages)
+    case _:
+        print("Please select from above choices only.")
